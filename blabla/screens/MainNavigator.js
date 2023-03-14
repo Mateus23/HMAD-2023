@@ -3,6 +3,8 @@ import TabGroup from './TabGroup';
 import Details from './Details';
 import Home from './Home';
 import Profile from './Profile';
+import Preferences from './Preferences';
+import Age from './Age';
 import HeaderTitle from '../components/HeaderTitle';
 
 const MainNavigator = () => {
@@ -18,6 +20,8 @@ const MainNavigator = () => {
 
             />
             <Stack.Screen name="Profile" component={Profile} />
+            <Stack.Screen name="Preferences" component={Preferences} />
+            <Stack.Screen name="Age" component={Age} />
             <Stack.Screen name="TabGroup" component={TabGroup} options={{ headerShown: false }} />
         </Stack.Navigator>
     )
