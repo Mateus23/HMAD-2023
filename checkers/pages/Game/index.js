@@ -1,9 +1,14 @@
-import { View, StyleSheet } from "react-native"
+import { View, StyleSheet, Text } from "react-native"
+import CheckersTable from "../../components/CheckersTable";
+import CheckersCell from "../../components/CheckersTable/CheckersCell";
 
 const Game = () => {
     return (
         <View style={styles.container}>
+          <Text>
             GAME
+          </Text>
+          <CheckersTable />
         </View>
     )
 }
