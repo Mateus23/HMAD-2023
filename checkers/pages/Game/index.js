@@ -9,15 +9,10 @@ const Game = () => {
     dispatch(clickedCell());
     return (
         <View style={styles.container}>
-            <Text>
-                GAME
-            </Text>
-            {/* <CheckersCell variant={'light'}/>
-            <CheckersCell variant={'dark'} piece={'light'}/>
-            <CheckersCell variant={'dark'} piece={'dark'}/>
-            <CheckersCell variant={'dark'} piece={'light'} isActive/>
-            <CheckersCell variant={'dark'} piece={'dark'} isActive/> */}
-            <CheckersTable />
+          <Text>
+            GAME
+          </Text>
+          <CheckersTable />
         </View>
     )
 }
