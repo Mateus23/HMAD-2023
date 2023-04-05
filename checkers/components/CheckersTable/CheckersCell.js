@@ -1,12 +1,12 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Pressable  } from 'react-native';
 import PropTypes from 'prop-types';
 
-const CheckersCell = ({isActive, piece, variant}) => {
-    const cellColor = isActive ? 'active' : variant;
+const CheckersCell = ({isActive, piece, variant, onPress, isPossible}) => {
+    const cellColor = (isActive || isPossible) ? 'active' : variant;
     return (
-        <View style={StyleSheet.compose(styles.container, styles.cellColor[cellColor])}>
+        <Pressable onPress={onPress} style={StyleSheet.compose(styles.container, styles.cellColor[cellColor])}>
             <View style={StyleSheet.compose(styles.piece, styles.pieceColor[piece])}/>
-        </View>
+        </Pressable>
     )
 }
 
@@ -43,8 +43,10 @@ const styles = StyleSheet.create({
 
 CheckersCell.propTypes = {
     isActive: PropTypes.bool,
+    isPossible: PropTypes.bool,
     variant: PropTypes.oneOf(['dark', 'light']).isRequired,
     piece: PropTypes.oneOf(['dark', 'light']),
+    onPress: PropTypes.func,
 }
 
 export default CheckersCell;

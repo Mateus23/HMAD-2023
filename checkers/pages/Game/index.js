@@ -5,8 +5,6 @@ import { clickedCell } from '../../reducers/gameReducer/gameSlice'
 import { useDispatch } from "react-redux";
 
 const Game = () => {
-    const dispatch = useDispatch();
-    dispatch(clickedCell());
     return (
         <View style={styles.container}>
           <Text>
