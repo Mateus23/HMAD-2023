@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getDatabase } from "firebase/database";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCRMda-n71e9Nwb8tPwt27aqlz9KdAcZUI",
@@ -13,13 +14,11 @@ const firebaseConfig = {
   databaseURL: "https://fir-hmad-2023-default-rtdb.firebaseio.com/"
 };
 
-console.log('firebase-api')
 
 export const app = initializeApp(firebaseConfig);
 
-console.log('firebase-api2')
 export const analytics = getAnalytics(app);
 
-console.log('firebase-api3')
 export const database = getDatabase();
-console.log('firebase-api4')
+
+export const auth = getAuth(app);
