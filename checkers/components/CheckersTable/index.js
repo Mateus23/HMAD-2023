@@ -1,15 +1,23 @@
 import { View, StyleSheet } from "react-native";
 import CheckersCell from "./CheckersCell";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { startMovement } from "../../reducers/gameReducer/gameSlice";
 
 const CheckersTable = () => {
     const tableState = useSelector(state => state.game.table)
+    const dispatch = useDispatch()
     return (
         <View style={styles.container}>
             {
-                tableState.map((row) => {
-                    return row.map(({isActive, piece, variant}) => {
-                        return <CheckersCell isActive={isActive} piece={piece} variant={variant}/>
+                tableState.map((row, indexX) => {
+                    return row.map(({isActive, piece, variant, isPossible}, indexY) => {
+                        return <CheckersCell 
+                            isActive={isActive}
+                            isPossible={isPossible}
+                            piece={piece}
+                            variant={variant}
+                            onPress={() => dispatch(startMovement({coord: [indexX, indexY]}))}
+                        />
                     })
                 })
             }
